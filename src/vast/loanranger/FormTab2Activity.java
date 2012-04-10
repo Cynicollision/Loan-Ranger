@@ -10,11 +10,11 @@ import android.content.Intent;
 import android.widget.*;
 import android.os.Bundle;
 
-public class FormTab1Activity extends Activity {
+public class FormTab2Activity extends Activity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.form_tab1);
+        setContentView(R.layout.form_tab2);
     }
 }
