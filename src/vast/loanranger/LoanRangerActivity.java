@@ -1,6 +1,7 @@
 package vast.loanranger;
 
 import vast.loanranger.R;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -16,7 +17,7 @@ public class LoanRangerActivity extends Activity
 {
 	private SharedPreferences savedContacts;
 	private EditText searchEditText;
-	private Button newCaseButton;
+	private Button newCaseButton, testButton;
 	private TableLayout contactsTableLayout;
 	
     /** Called when the activity is first created. */
@@ -30,6 +31,43 @@ public class LoanRangerActivity extends Activity
         savedContacts = getSharedPreferences("contacts", MODE_PRIVATE);
         contactsTableLayout = (TableLayout) findViewById(R.id.contactsTableLayout);
         searchEditText = (EditText) findViewById(R.id.searchEditText);
-
+        
+        newCaseButton = (Button) findViewById(R.id.newCaseButton);
+        newCaseButton.setOnClickListener(newCaseButtonListener);
+        testButton = (Button) findViewById(R.id.button1);
+        testButton.setOnClickListener(caseOverviewListener);
     }
+    
+    /**
+     * Click listener for the "new case" button
+     */
+    public OnClickListener newCaseButtonListener = new OnClickListener() 
+    {
+    	/**
+    	 * onClick
+    	 * @param v View
+    	 */
+       public void onClick(View v)
+       {
+    	   Intent i = new Intent(LoanRangerActivity.this, FormMainActivity.class);
+    	   try
+    	   {
+    		   startActivity(i);
+    	   }
+    	   catch (Exception e) { }
+       }
+    };
+    
+    public OnClickListener caseOverviewListener = new OnClickListener() 
+    {
+       public void onClick(View v)
+       {
+    	   Intent i = new Intent(LoanRangerActivity.this, OverviewActivity.class);
+    	   try
+    	   {
+    		   startActivity(i);
+    	   }
+    	   catch (Exception e) { }
+       }
+    };
 }

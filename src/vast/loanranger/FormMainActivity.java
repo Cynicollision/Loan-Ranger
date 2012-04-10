@@ -2,6 +2,7 @@ package vast.loanranger;
 
 import vast.loanranger.R;
 import android.app.Activity;
+import android.app.TabActivity;
 import android.content.Context;
 import android.content.res.*;
 import android.content.SharedPreferences;
@@ -13,7 +14,7 @@ import android.content.Intent;
 import android.widget.*;
 
 
-public class FormMainActivity extends Activity 
+public class FormMainActivity extends TabActivity 
 {
 	
     /** Called when the activity is first created. */
@@ -24,24 +25,23 @@ public class FormMainActivity extends Activity
 
     	// Required Variables
     	Resources res = getResources();
-    	TabHost tabHost = (TabHost) this.findViewById(R.id.form_main);
-    	tabHost.setup();
+    	TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
     	Intent intent;
     	TabHost.TabSpec spec;
 
     	// Adding tab1
     	intent = new Intent().setClass(this, FormTab1Activity.class);
-    	spec = tabHost.newTabSpec("tab1").setIndicator("Tab 1", res.getDrawable(R.drawable.tab1)).setContent(intent);
+    	spec = tabHost.newTabSpec("tab1").setIndicator("Tab 1", res.getDrawable(R.drawable.ic_launcher)).setContent(intent);
     	tabHost.addTab(spec);
 
     	// Adding tab2
     	intent = new Intent().setClass(this, FormTab2Activity.class);
-    	spec = tabHost.newTabSpec("tab2").setIndicator("Tab 2", res.getDrawable(R.drawable.tab2)).setContent(intent);
+    	spec = tabHost.newTabSpec("tab2").setIndicator("Tab 2", res.getDrawable(R.drawable.ic_launcher)).setContent(intent);
     	tabHost.addTab(spec);
 
     	// Adding tab3
     	intent = new Intent().setClass(this, FormTab3Activity.class);
-    	spec = tabHost.newTabSpec("tab3").setIndicator("Tab 3", res.getDrawable(R.drawable.tab3)).setContent(intent);
+    	spec = tabHost.newTabSpec("tab3").setIndicator("Tab 3", res.getDrawable(R.drawable.ic_launcher)).setContent(intent);
     	tabHost.addTab(spec);
 
     	// Set default tab

@@ -14,7 +14,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
-        android:id="@+id/notepadEditText"
+        android:id="@+id/notesEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.2"
@@ -30,13 +30,13 @@
         android:layout_height="wrap_content" >
 
         <Button
-            android:id="@+id/cancelButton"
+            android:id="@+id/notesCancelButton"
             android:layout_width="99dp"
             android:layout_height="wrap_content"
             android:text="@string/notes_cancel_button" />
 
         <Button
-            android:id="@+id/saveButton"
+            android:id="@+id/notesSaveButton"
             android:layout_width="99dp"
             android:layout_height="wrap_content"
             android:text="@string/notes_save_button" />

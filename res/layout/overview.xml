@@ -23,7 +23,7 @@
     </EditText>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/overviewPhoneTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="413-555-5555"
@@ -41,18 +41,18 @@
             android:layout_weight="1" >
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/overviewEditButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Edit" />
+                android:text="@string/overview_edit_button" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/overviewNotesButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Notes" />
+                android:text="@string/overview_notes_button" />
 
         </TableRow>
 
@@ -63,18 +63,18 @@
             android:layout_weight="1" >
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/overviewPicturesButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Pictures" />
+                android:text="@string/overview_pictures_button" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/overviewMapsButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Maps" />
+                android:text="@string/overview_map_button" />
         </TableRow>
 
         <TableRow
@@ -84,18 +84,18 @@
             android:layout_weight="1" >
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/overviewBackButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="&lt;-Back" />
+                android:text="@string/overview_back_button" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/overviewSendButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Send Case" />
+                android:text="@string/overview_send_button" />
         </TableRow>
     </TableLayout>
 
