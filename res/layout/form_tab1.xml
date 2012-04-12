@@ -5,10 +5,10 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/formTab1Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tab 1"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="@string/title_formeditor_tab1"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </LinearLayout>

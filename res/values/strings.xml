@@ -15,5 +15,8 @@
     <string name="overview_map_button">Map</string>
     <string name="overview_back_button">Back</string>
     <string name="overview_send_button">Send Case</string>
+    <string name="title_formeditor_tab1">Officer Info</string>
+    <string name="title_formeditor_tab2">Customer Info</string>
+    <string name="title_formeditor_tab3">Property Info</string>
 
 </resources>
