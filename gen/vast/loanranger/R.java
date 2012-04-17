@@ -9,18 +9,21 @@ package vast.loanranger;
 
 public final class R {
     public static final class array {
+        /**  SPINNER OPTIONS - ADVANCE NOTICE 
+         */
+        public static final int options_advance_notice=0x7f050004;
         /**  SPINNER OPTIONS - CUSTOMER TYPE 
          */
         public static final int options_customer_type=0x7f050003;
         /**  SPINNER OPTIONS - EVALUATION REASON 
          */
-        public static final int options_evaluation_reason=0x7f050004;
+        public static final int options_evaluation_reason=0x7f050005;
         /**  SPINNER OPTIONS - PROPERTY COMPLEXITY 
          */
-        public static final int options_property_complexity=0x7f050006;
+        public static final int options_property_complexity=0x7f050007;
         /**  SPINNER OPTIONS - PROPERTY TYPE 
          */
-        public static final int options_property_type=0x7f050005;
+        public static final int options_property_type=0x7f050006;
         /**  SPINNER OPTIONS - REGIONAL MANAGER AREA 
          */
         public static final int options_regional_manager=0x7f050002;

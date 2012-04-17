@@ -140,6 +140,12 @@
         <item>External - Feee</item>
     </string-array>
     
+    <!-- SPINNER OPTIONS - ADVANCE NOTICE -->
+    <string-array name="options_advance_notice">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+    
     <!-- SPINNER OPTIONS - EVALUATION REASON -->
     <string-array name="options_evaluation_reason">
         <item>New Loan</item>

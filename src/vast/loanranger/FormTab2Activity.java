@@ -11,10 +11,23 @@ import android.widget.*;
 import android.os.Bundle;
 
 public class FormTab2Activity extends Activity {
-    /** Called when the activity is first created. */
+   
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) 
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form_tab2);
+        
+        Spinner customerTypeSpinner = (Spinner)findViewById(R.id.customerTypeSpinner);
+    	Spinner advanceNoticeSpinner = (Spinner)findViewById(R.id.advanceNoticeSpinner);
+    	
+    	ArrayAdapter<CharSequence> adapter;
+        adapter = ArrayAdapter.createFromResource(this, R.array.options_customer_type, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        customerTypeSpinner.setAdapter(adapter);
+        
+        adapter = ArrayAdapter.createFromResource(this, R.array.options_advance_notice, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        advanceNoticeSpinner.setAdapter(adapter);
     }
 }
