@@ -10,5 +10,158 @@
         android:layout_height="wrap_content"
         android:text="@string/title_formeditor_tab3"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#FF909090" />
+    
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_request_reason" android:width="120dp" android:gravity="right" android:paddingRight="3dp" android:layout_gravity="center_vertical"/>
+
+            <Spinner
+                android:id="@+id/requestReasonSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_weight="1"/>
+
+        </TableRow>
+        
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_transaction_size" android:width="120dp" android:gravity="right" android:paddingRight="3dp" android:layout_gravity="center_vertical"/>
+
+			<EditText
+		        android:id="@+id/transactionSizeEditText"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:ems="10"
+		        android:inputType="number" android:layout_weight="1">
+		
+		    </EditText>
+
+        </TableRow>
+        
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_property_address" android:width="120dp" android:gravity="right" android:paddingRight="3dp" android:layout_gravity="center_vertical"/>
+
+            <EditText
+                android:id="@+id/propertyAddressEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPostalAddress" android:layout_weight="1">
+
+            </EditText>
+
+        </TableRow>
+        
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_property_type" android:width="120dp" android:gravity="right" android:paddingRight="3dp" android:layout_gravity="center_vertical"/>
+
+            <Spinner
+                android:id="@+id/propertyTypeSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_weight="1"/>
+
+        </TableRow>
+        
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_property_complexity" android:width="120dp" android:gravity="right" android:paddingRight="3dp" android:layout_gravity="center_vertical"/>
+
+            <Spinner
+                android:id="@+id/propertyComplexitySpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_weight="1"/>
+
+        </TableRow>
+        
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_acres" android:width="120dp" android:gravity="right" android:paddingRight="3dp" android:layout_gravity="center_vertical"/>
+
+            <EditText
+                android:id="@+id/propertyAcresEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal" android:layout_weight="1">
+                
+            </EditText>
+
+        </TableRow>
+        
+        <TableRow
+            android:id="@+id/tableRow7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:minHeight="150dp">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_legal_description" android:width="120dp" android:gravity="right" android:paddingRight="3dp" android:layout_gravity="fill"/>
+
+            <EditText
+                android:id="@+id/legalDescriptionEditText"
+                android:layout_width="wrap_content"
+                android:ems="10"
+                android:inputType="textMultiLine" android:layout_weight="1" android:layout_height="150dp">
+
+            </EditText>
+
+        </TableRow>
+    </TableLayout>
+
+    
 
 </LinearLayout>

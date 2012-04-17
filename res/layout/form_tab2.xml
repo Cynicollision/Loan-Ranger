@@ -30,126 +30,118 @@
                 android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Request date" android:width="120dp" android:gravity="right" android:paddingRight="3dp"/>
+                android:text="@string/label_request_date" android:width="120dp" android:gravity="right" android:paddingRight="3dp" android:layout_gravity="center_vertical"/>
 
             <EditText
-                android:id="@+id/editText1"
+                android:id="@+id/requestDateEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="right"
                 android:inputType="date"/>
+
+        </TableRow>
+        
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_completion_date" android:width="120dp" android:gravity="right" android:paddingRight="3dp" android:layout_gravity="center_vertical"/>
+
+            <EditText
+                android:id="@+id/completionDateEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="right"
+                android:inputType="date"/>
+
+        </TableRow>
+        
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_customer_type" android:width="120dp" android:gravity="right" android:paddingRight="3dp" android:layout_gravity="center_vertical"/>
+
+            <Spinner
+                android:id="@+id/customerTypeSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_weight="1"/>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_contact_name" android:width="120dp" android:gravity="right" android:paddingRight="3dp" android:layout_gravity="center_vertical"/>
+
+            <EditText
+                android:id="@+id/contactNameEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" android:layout_weight="1" android:gravity="right">
+            </EditText>
 
         </TableRow>
         
         <TableRow
             android:id="@+id/tableRow5"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Completion date" android:width="120dp" android:gravity="right" android:paddingRight="3dp"/>
+                android:text="@string/label_contact_number" android:width="120dp" android:gravity="right" android:paddingRight="3dp" android:layout_gravity="center_vertical"/>
 
             <EditText
-                android:id="@+id/editText1"
+                android:id="@+id/contactNumberEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:ems="10"
-                android:gravity="right"
-                android:inputType="date"/>
+                android:inputType="phone" android:layout_weight="1">
+
+                <requestFocus />
+            </EditText>
 
         </TableRow>
         
-        
         <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow3"
+            android:id="@+id/tableRow6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Customer type" android:width="120dp" android:gravity="right" android:paddingRight="3dp"/>
+                android:text="@string/label_advance_notice" android:width="120dp" android:gravity="right" android:paddingRight="3dp" android:layout_gravity="center_vertical"/>
 
             <Spinner
-                android:id="@+id/spinner1"
+                android:id="@+id/advanceNoticeSpinner"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Contact person's name" android:width="120dp" android:gravity="right" android:paddingRight="3dp"/>
-
-            <EditText
-                android:id="@+id/editText1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:gravity="right"
-                android:inputType="date"/>
-
-        </TableRow>
-        
-        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Contact person's number" android:width="120dp" android:gravity="right" android:paddingRight="3dp"/>
-
-            <EditText
-                android:id="@+id/editText1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:gravity="right"
-                android:inputType="date"/>
-
-        </TableRow>
-        
-        <TableRow
-            android:id="@+id/tableRow3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Advance notice necessary?" android:width="120dp" android:gravity="right" android:paddingRight="3dp"/>
-
-            <Spinner
-                android:id="@+id/spinner1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content" android:layout_weight="1"/>
 
         </TableRow>
     </TableLayout>

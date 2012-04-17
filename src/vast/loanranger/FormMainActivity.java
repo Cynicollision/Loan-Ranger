@@ -32,17 +32,17 @@ public class FormMainActivity extends TabActivity
 
     	// Adding tab1
     	intent = new Intent().setClass(this, FormTab1Activity.class);
-    	spec = tabHost.newTabSpec("tab1").setIndicator("Tab 1", res.getDrawable(R.drawable.ic_launcher)).setContent(intent);
+    	spec = tabHost.newTabSpec("tab1").setIndicator("Loan Officer", res.getDrawable(R.drawable.ic_tab1)).setContent(intent);
     	tabHost.addTab(spec);
 
     	// Adding tab2
     	intent = new Intent().setClass(this, FormTab2Activity.class);
-    	spec = tabHost.newTabSpec("tab2").setIndicator("Tab 2", res.getDrawable(R.drawable.ic_launcher)).setContent(intent);
+    	spec = tabHost.newTabSpec("tab2").setIndicator("Customer", res.getDrawable(R.drawable.ic_tab2)).setContent(intent);
     	tabHost.addTab(spec);
 
     	// Adding tab3
     	intent = new Intent().setClass(this, FormTab3Activity.class);
-    	spec = tabHost.newTabSpec("tab3").setIndicator("Tab 3", res.getDrawable(R.drawable.ic_launcher)).setContent(intent);
+    	spec = tabHost.newTabSpec("tab3").setIndicator("Property", res.getDrawable(R.drawable.ic_tab3)).setContent(intent);
     	tabHost.addTab(spec);
 
     	// Set default tab

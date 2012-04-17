@@ -8,43 +8,95 @@
 package vast.loanranger;
 
 public final class R {
+    public static final class array {
+        /**  SPINNER OPTIONS - CUSTOMER TYPE 
+         */
+        public static final int options_customer_type=0x7f050003;
+        /**  SPINNER OPTIONS - EVALUATION REASON 
+         */
+        public static final int options_evaluation_reason=0x7f050004;
+        /**  SPINNER OPTIONS - PROPERTY COMPLEXITY 
+         */
+        public static final int options_property_complexity=0x7f050006;
+        /**  SPINNER OPTIONS - PROPERTY TYPE 
+         */
+        public static final int options_property_type=0x7f050005;
+        /**  SPINNER OPTIONS - REGIONAL MANAGER AREA 
+         */
+        public static final int options_regional_manager=0x7f050002;
+        /**  SPINNER OPTIONS - REQUESTING BRANCH 
+         */
+        public static final int options_requesting_branch=0x7f050000;
+        /**  SPINNER OPTIONS - STATE 
+         */
+        public static final int options_state=0x7f050001;
+    }
     public static final class attr {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
+        public static final int ic_tab1=0x7f020001;
+        public static final int ic_tab2=0x7f020002;
+        public static final int ic_tab3=0x7f020003;
     }
     public static final class id {
-        public static final int button1=0x7f05000f;
-        public static final int contactsScrollView=0x7f050010;
-        public static final int contactsTableLayout=0x7f050011;
-        public static final int contactsTextView=0x7f05000d;
-        public static final int editText1=0x7f050004;
-        public static final int formTab1Title=0x7f050000;
-        public static final int formTab2Title=0x7f050001;
-        public static final int formTab3Title=0x7f050009;
-        public static final int linearLayout1=0x7f050014;
-        public static final int newCaseButton=0x7f05000e;
-        public static final int notesCancelButton=0x7f050015;
-        public static final int notesEditText=0x7f050013;
-        public static final int notesSaveButton=0x7f050016;
-        public static final int notesTextView=0x7f050012;
-        public static final int overviewBackButton=0x7f05001d;
-        public static final int overviewEditButton=0x7f050019;
-        public static final int overviewMapsButton=0x7f05001c;
-        public static final int overviewNotesButton=0x7f05001a;
-        public static final int overviewPhoneTextView=0x7f050017;
-        public static final int overviewPicturesButton=0x7f05001b;
-        public static final int overviewSendButton=0x7f05001e;
-        public static final int searchEditText=0x7f05000c;
-        public static final int spinner1=0x7f050008;
-        public static final int tableLayout=0x7f05000a;
-        public static final int tableLayout1=0x7f050018;
-        public static final int tableRow0=0x7f05000b;
-        public static final int tableRow1=0x7f050002;
-        public static final int tableRow2=0x7f050006;
-        public static final int tableRow3=0x7f050007;
-        public static final int tableRow5=0x7f050005;
-        public static final int textView1=0x7f050003;
+        public static final int advanceNoticeSpinner=0x7f060018;
+        public static final int button1=0x7f060028;
+        public static final int completionDateEditText=0x7f060012;
+        public static final int contactNameEditText=0x7f060014;
+        public static final int contactNumberEditText=0x7f060015;
+        public static final int contactsScrollView=0x7f060029;
+        public static final int contactsTableLayout=0x7f06002a;
+        public static final int contactsTextView=0x7f060026;
+        public static final int countyEditText=0x7f06000c;
+        public static final int customerTypeSpinner=0x7f060013;
+        public static final int editText1=0x7f060030;
+        public static final int formTab1Title=0x7f060000;
+        public static final int formTab2Title=0x7f060010;
+        public static final int formTab3Title=0x7f060019;
+        public static final int legalDescriptionEditText=0x7f060022;
+        public static final int linearLayout1=0x7f06002d;
+        public static final int newCaseButton=0x7f060027;
+        public static final int notesCancelButton=0x7f06002e;
+        public static final int notesEditText=0x7f06002c;
+        public static final int notesSaveButton=0x7f06002f;
+        public static final int notesTextView=0x7f06002b;
+        public static final int officerNameEditText=0x7f060003;
+        public static final int overviewBackButton=0x7f060037;
+        public static final int overviewEditButton=0x7f060033;
+        public static final int overviewMapsButton=0x7f060036;
+        public static final int overviewNotesButton=0x7f060034;
+        public static final int overviewPhoneTextView=0x7f060031;
+        public static final int overviewPicturesButton=0x7f060035;
+        public static final int overviewSendButton=0x7f060038;
+        public static final int propertyAcresEditText=0x7f06001f;
+        public static final int propertyAddressEditText=0x7f06001c;
+        public static final int propertyComplexitySpinner=0x7f06001e;
+        public static final int propertyTypeSpinner=0x7f06001d;
+        public static final int regionalManagerSpinner=0x7f06000f;
+        public static final int requestDateEditText=0x7f060011;
+        public static final int requestReasonSpinner=0x7f06001a;
+        public static final int requestingBranchSpinner=0x7f060006;
+        public static final int searchEditText=0x7f060025;
+        public static final int stateSpinner=0x7f060009;
+        public static final int tableLayout=0x7f060023;
+        public static final int tableLayout1=0x7f060032;
+        public static final int tableRow0=0x7f060024;
+        public static final int tableRow1=0x7f060001;
+        public static final int tableRow2=0x7f060004;
+        public static final int tableRow3=0x7f060007;
+        public static final int tableRow4=0x7f06000a;
+        public static final int tableRow5=0x7f06000d;
+        public static final int tableRow6=0x7f060016;
+        public static final int tableRow7=0x7f060020;
+        public static final int textView1=0x7f060002;
+        public static final int textView2=0x7f060005;
+        public static final int textView3=0x7f060008;
+        public static final int textView4=0x7f06000b;
+        public static final int textView5=0x7f06000e;
+        public static final int textView6=0x7f060017;
+        public static final int textView7=0x7f060021;
+        public static final int transactionSizeEditText=0x7f06001b;
     }
     public static final class layout {
         public static final int form_main=0x7f030000;
@@ -56,23 +108,57 @@ public final class R {
         public static final int overview=0x7f030006;
     }
     public static final class string {
-        public static final int app_name=0x7f040002;
-        public static final int main_new_case=0x7f040006;
-        public static final int main_search_hint=0x7f040001;
-        public static final int main_title=0x7f040000;
-        public static final int notes_cancel_button=0x7f040004;
-        public static final int notes_save_button=0x7f040005;
-        public static final int notes_title=0x7f040003;
-        public static final int overview_back_button=0x7f04000d;
-        public static final int overview_edit_button=0x7f04000a;
-        public static final int overview_map_button=0x7f04000c;
-        public static final int overview_notes_button=0x7f040009;
-        public static final int overview_pictures_button=0x7f04000b;
-        public static final int overview_send_button=0x7f04000e;
-        public static final int title_formeditor=0x7f040008;
-        public static final int title_formeditor_tab1=0x7f04000f;
-        public static final int title_formeditor_tab2=0x7f040010;
-        public static final int title_formeditor_tab3=0x7f040011;
-        public static final int title_overview=0x7f040007;
+        /**   APP TITLE 
+         */
+        public static final int app_name=0x7f040000;
+        public static final int label_acres=0x7f040022;
+        public static final int label_advance_notice=0x7f04001c;
+        public static final int label_completion_date=0x7f040018;
+        public static final int label_contact_name=0x7f04001a;
+        public static final int label_contact_number=0x7f04001b;
+        public static final int label_county=0x7f040015;
+        public static final int label_customer_type=0x7f040019;
+        public static final int label_legal_description=0x7f040023;
+        /**  FORM LABELS - TAB 1 
+         */
+        public static final int label_officer_name=0x7f040012;
+        public static final int label_property_address=0x7f04001f;
+        public static final int label_property_complexity=0x7f040021;
+        public static final int label_property_type=0x7f040020;
+        public static final int label_regional_manager=0x7f040016;
+        /**  FORM LABELS - TAB 2 
+         */
+        public static final int label_request_date=0x7f040017;
+        /**  FORM LABELS - TAB 3 
+         */
+        public static final int label_request_reason=0x7f04001d;
+        public static final int label_requesting_branch=0x7f040013;
+        public static final int label_state=0x7f040014;
+        public static final int label_transaction_size=0x7f04001e;
+        public static final int main_new_case=0x7f040008;
+        /**  MAIN SCREEN 
+         */
+        public static final int main_search_hint=0x7f040007;
+        public static final int notes_cancel_button=0x7f04000a;
+        public static final int notes_save_button=0x7f04000b;
+        /**  NOTES SCREEN 
+         */
+        public static final int notes_title=0x7f040009;
+        public static final int overview_back_button=0x7f040010;
+        public static final int overview_edit_button=0x7f04000d;
+        public static final int overview_map_button=0x7f04000f;
+        /**  OVERVIEW SCREEN 
+         */
+        public static final int overview_notes_button=0x7f04000c;
+        public static final int overview_pictures_button=0x7f04000e;
+        public static final int overview_send_button=0x7f040011;
+        public static final int title_formeditor=0x7f040003;
+        public static final int title_formeditor_tab1=0x7f040004;
+        public static final int title_formeditor_tab2=0x7f040005;
+        public static final int title_formeditor_tab3=0x7f040006;
+        /**   PAGE TITLES 
+         */
+        public static final int title_main=0x7f040001;
+        public static final int title_overview=0x7f040002;
     }
 }

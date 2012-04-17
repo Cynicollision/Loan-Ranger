@@ -16,7 +16,7 @@
     <EditText
         android:id="@+id/notesEditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="0.2"
         android:lines="5"
         android:inputType="textMultiLine" >

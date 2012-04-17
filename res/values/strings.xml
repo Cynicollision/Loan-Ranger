@@ -1,22 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="main_title">Contacts</string>
-    <string name="main_search_hint">Search</string>
+    <!--  APP TITLE -->
     <string name="app_name">Loan Ranger</string>
+    
+    <!--  PAGE TITLES -->
+    <string name="title_main">Cases</string>
+    <string name="title_overview">Case Overview</string>
+    <string name="title_formeditor">Case Details</string>
+    <string name="title_formeditor_tab1">Officer Info</string>
+    <string name="title_formeditor_tab2">Customer Info</string>
+    <string name="title_formeditor_tab3">Property Info</string>
+    
+    <!-- MAIN SCREEN -->
+    <string name="main_search_hint">Search</string>
+    <string name="main_new_case">+ New Case</string>
+    
+    <!-- NOTES SCREEN -->
     <string name="notes_title">Case Notes</string>
     <string name="notes_cancel_button">Cancel</string>
     <string name="notes_save_button">Save</string>
-    <string name="main_new_case">+ New Case</string>
-    <string name="title_overview">Case Overview</string>
-    <string name="title_formeditor">Case Details</string>
+    
+    <!-- OVERVIEW SCREEN -->
     <string name="overview_notes_button">Notes</string>
     <string name="overview_edit_button">Edit</string>
     <string name="overview_pictures_button">Pictures</string>
     <string name="overview_map_button">Map</string>
     <string name="overview_back_button">Back</string>
     <string name="overview_send_button">Send Case</string>
-    <string name="title_formeditor_tab1">Officer Info</string>
-    <string name="title_formeditor_tab2">Customer Info</string>
-    <string name="title_formeditor_tab3">Property Info</string>
+    
+    <!-- FORM LABELS - TAB 1 -->
+    <string name="label_officer_name">Loan Officer Name</string>
+    <string name="label_requesting_branch">Requesting branch</string>
+    <string name="label_state">State</string>
+    <string name="label_county">County</string>
+    <string name="label_regional_manager">Regional manager area</string>
+    
+    <!-- FORM LABELS - TAB 2 -->
+    <string name="label_request_date">Request date</string>
+    <string name="label_completion_date">Completion date</string>
+    <string name="label_customer_type">Customer type</string>
+    <string name="label_contact_name">Contact person\'s name</string>
+    <string name="label_contact_number">Contact person\'s phone number</string>
+    <string name="label_advance_notice">Advance notice necessary?</string>
 
+    <!-- FORM LABELS - TAB 3 -->
+    <string name="label_request_reason">Reason for evaluation</string>
+    <string name="label_transaction_size">Transaction size</string>
+    <string name="label_property_address">Property address</string>
+    <string name="label_property_type">Property type</string>
+    <string name="label_property_complexity">Property complexity</string>
+    <string name="label_acres">Number of acres</string>
+    <string name="label_legal_description">Legal description</string>
+    
+    <!-- SPINNER OPTIONS - REQUESTING BRANCH -->
+    <string-array name="options_requesting_branch">
+        <item>Bedford</item>
+        <item>Bridgeton</item>
+        <item>Burrville</item>
+        <item>Claverack</item>
+        <item>Cobleskill</item>
+        <item>Cortland</item>
+        <item>Dayville</item>
+        <item>Enfield</item>
+        <item>Admin</item>
+        <item>Flemington</item>
+        <item>Greenwich</item>
+        <item>Middleboro</item>
+        <item>Middletown</item>
+        <item>Potsdam</item>
+        <item>Riverhead</item>
+    </string-array>
+    
+    
+    <!-- SPINNER OPTIONS - STATE -->
+    <string-array name="options_state">
+        <item>Alabama</item>
+		<item>Alaska</item>
+		<item>Arizona</item>
+		<item>Arkansas</item>
+		<item>California</item>
+		<item>Colorado</item>
+		<item>Connecticut</item>
+		<item>Delaware</item>
+		<item>Florida</item>
+		<item>Georgia</item>
+		<item>Hawaii</item>
+		<item>Idaho</item>
+		<item>Illinois</item>
+		<item>Indiana</item>
+		<item>Iowa</item>
+		<item>Kansas</item>
+		<item>Kentucky</item>
+		<item>Louisiana</item>
+		<item>Maine</item>
+		<item>Maryland</item>	
+		<item>Massachusetts</item>	
+		<item>Michigan</item>	
+		<item>Minnesota</item>	
+		<item>Mississippi</item>	
+		<item>Missouri</item>	
+		<item>Montana</item>	
+		<item>Nebraska</item>	
+		<item>Nevada</item>	
+		<item>New Hampshire</item> 	
+		<item>New Jersey</item> 	
+		<item>New Mexico</item> 	
+		<item>New York</item> 	
+		<item>North Carolina</item> 	
+		<item>North Dakota</item> 	
+		<item>Ohio</item>
+		<item>Oklahoma</item>	
+		<item>Oregon</item>	
+		<item>Pennsylvania</item>	
+		<item>Rhode Island</item> 	
+		<item>South Carolina</item> 	
+		<item>South Dakota</item> 	
+		<item>Tennessee</item>	
+		<item>Texas</item>	
+		<item>Utah</item>	
+		<item>Vermont</item>	
+		<item>Virginia</item>	
+		<item>Washington</item>	
+		<item>West Verginia</item> 	
+		<item>Wisconsin</item>	
+		<item>Wyoming</item>	
+    </string-array>
+    
+    <!-- SPINNER OPTIONS - REGIONAL MANAGER AREA -->
+    <string-array name="options_regional_manager">
+        <item>Boone</item>
+        <item>Bradley</item>
+        <item>Caltabiano</item>
+    </string-array>
+    
+    <!-- SPINNER OPTIONS - CUSTOMER TYPE -->
+    <string-array name="options_customer_type">
+        <item>Internal - Credit</item>
+        <item>Internal - YBSF</item>
+        <item>External - Feee</item>
+    </string-array>
+    
+    <!-- SPINNER OPTIONS - EVALUATION REASON -->
+    <string-array name="options_evaluation_reason">
+        <item>New Loan</item>
+        <item>Loan Servicing</item>
+        <item>Additional Collateral</item>
+        <item>Acquired Property</item>
+        <item>Restructure/Concession</item>
+        <item>Fee - External</item>
+        <item>Other</item>
+    </string-array>
+    
+    <!-- SPINNER OPTIONS - PROPERTY TYPE -->
+    <string-array name="options_property_type">
+        <item>Ag - Vacant</item>
+        <item>Ag - Improved</item>
+        <item>Commercial</item>
+        <item>Industrial</item>
+        <item>Recreational</item>
+        <item>Residential</item>
+        <item>Development</item>
+        <item>Personal Property</item>
+        <item>Business Valuation</item>
+    </string-array>
+    
+    <!-- SPINNER OPTIONS - PROPERTY COMPLEXITY -->
+    <string-array name="options_property_complexity">
+        <item>Complex</item>
+        <item>NonComplex</item>
+    </string-array>
+    
 </resources>
