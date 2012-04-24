@@ -178,7 +178,7 @@
     </string-array>
     
     <!-- edit text Labels -->
-    <string-array name="edit-text-labels">
+    <string-array name="edit_text_labels">
 		<item>CaseCde</item>  
 		<item>LoanOfficerName</item> 
 		<item>BranchCde</item> 

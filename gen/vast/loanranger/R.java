@@ -11,7 +11,7 @@ public final class R {
     public static final class array {
         /**  edit text Labels 
          */
-        public static final int edit-text-labels=0x7f050008;
+        public static final int edit_text_labels=0x7f050008;
         /**  SPINNER OPTIONS - ADVANCE NOTICE 
          */
         public static final int options_advance_notice=0x7f050004;
@@ -51,9 +51,8 @@ public final class R {
         public static final int completionDateEditText=0x7f060012;
         public static final int contactNameEditText=0x7f060014;
         public static final int contactNumberEditText=0x7f060015;
-        public static final int contactsScrollView=0x7f06002a;
-        public static final int contactsTableLayout=0x7f06002b;
-        public static final int contactsTextView=0x7f060028;
+        public static final int contactsScrollView=0x7f060028;
+        public static final int contactsTableLayout=0x7f060029;
         public static final int countyEditText=0x7f06000c;
         public static final int customerTypeSpinner=0x7f060013;
         public static final int formTab1Title=0x7f060000;
@@ -61,12 +60,12 @@ public final class R {
         public static final int formTab3Title=0x7f060019;
         public static final int formTab4Title=0x7f060023;
         public static final int legalDescriptionEditText=0x7f060022;
-        public static final int linearLayout1=0x7f06002d;
-        public static final int newCaseButton=0x7f060029;
-        public static final int notesCancelButton=0x7f06002e;
+        public static final int linearLayout1=0x7f06002b;
+        public static final int newCaseButton=0x7f060027;
+        public static final int notesCancelButton=0x7f06002c;
         public static final int notesEditText=0x7f060024;
-        public static final int notesSaveButton=0x7f06002f;
-        public static final int notesTextView=0x7f06002c;
+        public static final int notesSaveButton=0x7f06002d;
+        public static final int notesTextView=0x7f06002a;
         public static final int officerNameEditText=0x7f060003;
         public static final int propertyAcresEditText=0x7f06001f;
         public static final int propertyAddressEditText=0x7f06001c;
@@ -76,7 +75,6 @@ public final class R {
         public static final int requestDateEditText=0x7f060011;
         public static final int requestReasonSpinner=0x7f06001a;
         public static final int requestingBranchSpinner=0x7f060006;
-        public static final int searchEditText=0x7f060027;
         public static final int stateSpinner=0x7f060009;
         public static final int tableLayout=0x7f060025;
         public static final int tableRow0=0x7f060026;
