@@ -158,10 +158,6 @@
                 android:inputType="textMultiLine" android:layout_weight="1" android:layout_height="150dp">
 
             </EditText>
-
         </TableRow>
     </TableLayout>
-
-    
-
 </LinearLayout>

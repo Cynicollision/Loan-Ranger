@@ -17,7 +17,7 @@ public class LoanRangerActivity extends Activity
 {
 	private SharedPreferences savedContacts;
 	private EditText searchEditText;
-	private Button newCaseButton, testButton;
+	private Button newCaseButton;
 	private TableLayout contactsTableLayout;
 	
     /** Called when the activity is first created. */
@@ -34,8 +34,6 @@ public class LoanRangerActivity extends Activity
         
         newCaseButton = (Button) findViewById(R.id.newCaseButton);
         newCaseButton.setOnClickListener(newCaseButtonListener);
-        testButton = (Button) findViewById(R.id.button1);
-        testButton.setOnClickListener(caseOverviewListener);
     }
     
     /**
@@ -50,19 +48,6 @@ public class LoanRangerActivity extends Activity
        public void onClick(View v)
        {
     	   Intent i = new Intent(LoanRangerActivity.this, FormMainActivity.class);
-    	   try
-    	   {
-    		   startActivity(i);
-    	   }
-    	   catch (Exception e) { }
-       }
-    };
-    
-    public OnClickListener caseOverviewListener = new OnClickListener() 
-    {
-       public void onClick(View v)
-       {
-    	   Intent i = new Intent(LoanRangerActivity.this, OverviewActivity.class);
     	   try
     	   {
     		   startActivity(i);
