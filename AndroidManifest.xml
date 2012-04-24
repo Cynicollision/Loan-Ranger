@@ -5,7 +5,6 @@
     android:versionName="1.0" >
 
     <uses-sdk android:minSdkVersion="10" />
-    <uses-feature android:name="android.hardware.camera" />
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -23,14 +22,6 @@
         <activity
             android:name=".OverviewActivity"
             android:label="@string/title_overview" >
-        </activity>
-        
-        <activity
-            android:name=".NotesActivity"
-            android:label="@string/title_overview" >
-            <intent-filter>
-                <category android:name="android.intent.category.ALTERNATIVE" />
-            </intent-filter>
         </activity>
         
         <activity
@@ -53,7 +44,7 @@
             android:name=".FormTab2Activity"
             android:label="@string/title_formeditor" >
             <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.ALTERNATIVE" />
             </intent-filter>
         </activity>
         
@@ -61,9 +52,16 @@
             android:name=".FormTab3Activity"
             android:label="@string/title_formeditor" >
             <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.ALTERNATIVE" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".FormTab4Activity"
+            android:label="@string/title_formeditor" >
+            <intent-filter>
+                <category android:name="android.intent.category.ALTERNATIVE" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

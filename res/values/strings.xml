@@ -10,6 +10,7 @@
     <string name="title_formeditor_tab1">Officer Info</string>
     <string name="title_formeditor_tab2">Customer Info</string>
     <string name="title_formeditor_tab3">Property Info</string>
+    <string name="title_formeditor_tab4">Case Notes</string>
     
     <!-- MAIN SCREEN -->
     <string name="main_search_hint">Search</string>
@@ -137,7 +138,7 @@
     <string-array name="options_customer_type">
         <item>Internal - Credit</item>
         <item>Internal - YBSF</item>
-        <item>External - Feee</item>
+        <item>External - Fee</item>
     </string-array>
     
     <!-- SPINNER OPTIONS - ADVANCE NOTICE -->
