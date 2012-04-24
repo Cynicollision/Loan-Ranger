@@ -9,6 +9,9 @@ package vast.loanranger;
 
 public final class R {
     public static final class array {
+        /**  edit text Labels 
+         */
+        public static final int edit-text-labels=0x7f050008;
         /**  SPINNER OPTIONS - ADVANCE NOTICE 
          */
         public static final int options_advance_notice=0x7f050004;

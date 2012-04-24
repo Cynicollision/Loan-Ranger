@@ -20,11 +20,6 @@
         </activity>
         
         <activity
-            android:name=".OverviewActivity"
-            android:label="@string/title_overview" >
-        </activity>
-        
-        <activity
             android:name=".FormMainActivity"
             android:label="@string/title_formeditor" >
             <intent-filter>

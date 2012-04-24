@@ -10,30 +10,6 @@ import android.widget.*;
 
 public class FormMainActivity extends TabActivity 
 {
-	EditText officerNameEditText, 
-			 countyEditText,
-			 requestDateEditText,
-			 completionDateEditText,
-			 contactNameEditText,
-			 contactNumberEditText,
-			 transactionSizeEditText,
-			 propertyAddressEditText,
-			 propertyAcresEditText,
-			 legalDescriptionEditText,
-			 caseNotesTxt;
-	
-	Spinner requestingBranchSpinner,
-			stateSpinner,
-			regionalManagerSpinner,
-			customerTypeSpinner,
-			advanceNoticeSpinner,
-			requestReasonSpinner,
-			propertyTypeSpinner,
-			propertyComplexitySpinner;
-			
-			
-	
-    /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) 
     {
@@ -68,50 +44,5 @@ public class FormMainActivity extends TabActivity
 
     	// Set default tab
     	tabHost.setCurrentTab(0);
-    	
-    	// Set up spinners
-    	ArrayAdapter<CharSequence> adapter;
-    	
-    	requestingBranchSpinner = (Spinner)findViewById(R.id.requestingBranchSpinner);
-    	stateSpinner = (Spinner)findViewById(R.id.stateSpinner);
-    	regionalManagerSpinner = (Spinner)findViewById(R.id.regionalManagerSpinner);
-    	customerTypeSpinner = (Spinner)findViewById(R.id.customerTypeSpinner);
-    	advanceNoticeSpinner = (Spinner)findViewById(R.id.advanceNoticeSpinner);
-        
-        adapter = ArrayAdapter.createFromResource(this, R.array.options_requesting_branch, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        requestingBranchSpinner.setAdapter(adapter);
-        
-        adapter = ArrayAdapter.createFromResource(this, R.array.options_state, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        stateSpinner.setAdapter(adapter);
-        
-        adapter = ArrayAdapter.createFromResource(this, R.array.options_regional_manager, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        regionalManagerSpinner.setAdapter(adapter);
-
-        adapter = ArrayAdapter.createFromResource(this, R.array.options_customer_type, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        customerTypeSpinner.setAdapter(adapter);
-        
-        adapter = ArrayAdapter.createFromResource(this, R.array.options_advance_notice, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        advanceNoticeSpinner.setAdapter(adapter);
-        
-        requestReasonSpinner = (Spinner)findViewById(R.id.requestReasonSpinner);
-        propertyTypeSpinner = (Spinner)findViewById(R.id.propertyTypeSpinner);
-        propertyComplexitySpinner = (Spinner)findViewById(R.id.propertyComplexitySpinner);
-        
-        adapter = ArrayAdapter.createFromResource(this, R.array.options_evaluation_reason, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        requestReasonSpinner.setAdapter(adapter);
-        
-        adapter = ArrayAdapter.createFromResource(this, R.array.options_property_type, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        propertyTypeSpinner.setAdapter(adapter);
-        
-        adapter = ArrayAdapter.createFromResource(this, R.array.options_property_complexity, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        propertyComplexitySpinner.setAdapter(adapter);
     }
 }
