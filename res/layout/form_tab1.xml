@@ -38,7 +38,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="right"
-                android:inputType="textPersonName"/>
+                android:inputType="textPersonName" android:tag="LoanOfficerName"/>
 
         </TableRow>
         
@@ -57,7 +57,7 @@
             <Spinner
                 android:id="@+id/requestingBranchSpinner"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:layout_weight="1"/>
+                android:layout_height="wrap_content" android:layout_weight="1" android:tag="BranchCde"/>
 
         </TableRow>
 
@@ -76,7 +76,7 @@
             <Spinner
                 android:id="@+id/stateSpinner"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:layout_weight="1"/>
+                android:layout_height="wrap_content" android:layout_weight="1" android:tag="StateCde"/>
 
         </TableRow>
         
@@ -96,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10" android:layout_weight="1"
-                android:inputType="text">
+                android:inputType="text" android:tag="CountyDesc">
             </EditText>
 
         </TableRow>
@@ -115,7 +115,7 @@
             <Spinner
                 android:id="@+id/regionalManagerSpinner"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:layout_weight="1"/>
+                android:layout_height="wrap_content" android:layout_weight="1" android:tag="RegionalManagerCde"/>
 
         </TableRow>
     </TableLayout>

@@ -34,7 +34,7 @@
             <Spinner
                 android:id="@+id/requestReasonSpinner"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:layout_weight="1"/>
+                android:layout_height="wrap_content" android:layout_weight="1" android:tag="EvaluationReasonCde"/>
 
         </TableRow>
         
@@ -54,7 +54,7 @@
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
 		        android:ems="10"
-		        android:inputType="number" android:layout_weight="1">
+		        android:inputType="number" android:layout_weight="1" android:tag="TransactionAmt">
 		
 		    </EditText>
 
@@ -76,7 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPostalAddress" android:layout_weight="1">
+                android:inputType="textPostalAddress" android:layout_weight="1" android:tag="PropertyAddressTxt">
 
             </EditText>
 
@@ -96,7 +96,7 @@
             <Spinner
                 android:id="@+id/propertyTypeSpinner"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:layout_weight="1"/>
+                android:layout_height="wrap_content" android:layout_weight="1" android:tag="PropertyTypeCde"/>
 
         </TableRow>
         
@@ -114,7 +114,7 @@
             <Spinner
                 android:id="@+id/propertyComplexitySpinner"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:layout_weight="1"/>
+                android:layout_height="wrap_content" android:layout_weight="1" android:tag="PropertyComplexInd"/>
 
         </TableRow>
         
@@ -134,7 +134,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="numberDecimal" android:layout_weight="1">
+                android:inputType="numberDecimal" android:layout_weight="1" android:tag="AcresNum">
                 
             </EditText>
 
@@ -155,7 +155,7 @@
                 android:id="@+id/legalDescriptionEditText"
                 android:layout_width="wrap_content"
                 android:ems="10"
-                android:inputType="textMultiLine" android:layout_weight="1" android:layout_height="150dp">
+                android:inputType="textMultiLine" android:layout_weight="1" android:layout_height="150dp" android:tag="LegalDescTxt">
 
             </EditText>
         </TableRow>
