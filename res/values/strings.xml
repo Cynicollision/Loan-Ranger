@@ -177,4 +177,28 @@
         <item>NonComplex</item>
     </string-array>
     
+    <!-- edit text Labels -->
+    <string-array name="edit-text-labels">
+		<item>CaseCde</item>  
+		<item>LoanOfficerName</item> 
+		<item>BranchCde</item> 
+		<item>StateCde</item> 
+		<item>CountyDesc</item> 
+		<item>RegionalManagerCde</item>    
+		<item>RequestDte</item> 
+		<item>CompletionDte</item> 
+		<item>CustomerTypeCde</item> 
+		<item>ContactName</item> 
+		<item>ContactPhoneNum</item> 
+		<item>AdvanceNoticeNecessaryInd</item> 
+		<item>EvaluationReasonCde</item> 
+		<item>TransactionAmt</item> 
+		<item>PropertyAddressTxt</item> 
+		<item>PropertyTypeCde</item> 
+		<item>PropertyComplexInd</item> 
+		<item>AcresNum</item> 
+		<item>LegalDescTxt</item> 
+		<item>CaseNotesTxt</item> 
+	</string-array>
+    
 </resources>
