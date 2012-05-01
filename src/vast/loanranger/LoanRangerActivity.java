@@ -10,7 +10,6 @@ import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import vast.loanranger.R;
 
@@ -101,11 +100,12 @@ public class LoanRangerActivity extends Activity
     public void populateCaseList()
     {
     	TextView t;
+    	ValuePair v;
     	for (int i = 0; i < cases.length; i++)
     	{
     		t = new TextView(this);
     		t.setOnClickListener(new caseClickListener(cases[i]));
-    		t.setText(cases[i].data.get("ContactName"));
+    		t.setText(cases[i].getName());
     		t.setTextSize(18);
     		t.setHeight(50);
     		contactsTableLayout.addView(t);

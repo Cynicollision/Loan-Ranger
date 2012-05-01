@@ -41,11 +41,7 @@ public class FormTab3Activity extends Activity
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         propertyComplexitySpinner.setAdapter(adapter);
         
-        HashMap data = LoanRangerActivity.currentCase.data;
-        
-        ((EditText)findViewById(R.id.transactionSizeEditText)).setText((CharSequence)data.get("TransactionAmt"));
-        ((EditText)findViewById(R.id.propertyAddressEditText)).setText((CharSequence)data.get("PropertyAddressTxt"));
-        ((EditText)findViewById(R.id.propertyAcresEditText)).setText((CharSequence)data.get("AcresNum"));
-        ((EditText)findViewById(R.id.legalDescriptionEditText)).setText((CharSequence)data.get("LegalDescTxt"));
+        FormMainActivity.populate(this);
+
     }
 }

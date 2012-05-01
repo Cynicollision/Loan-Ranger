@@ -54,7 +54,7 @@
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
 		        android:ems="10"
-		        android:inputType="number" android:layout_weight="1" android:tag="TransactionAmt">
+		        android:inputType="number" android:layout_weight="1" android:tag="TransactionAmt" android:gravity="left">
 		
 		    </EditText>
 
@@ -76,7 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPostalAddress" android:layout_weight="1" android:tag="PropertyAddressTxt">
+                android:inputType="textPostalAddress" android:layout_weight="1" android:tag="PropertyAddressTxt" android:gravity="left">
 
             </EditText>
 
@@ -134,7 +134,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="numberDecimal" android:layout_weight="1" android:tag="AcresNum">
+                android:inputType="numberDecimal" android:layout_weight="1" android:tag="AcresNum" android:gravity="left">
                 
             </EditText>
 
@@ -155,7 +155,7 @@
                 android:id="@+id/legalDescriptionEditText"
                 android:layout_width="wrap_content"
                 android:ems="10"
-                android:inputType="textMultiLine" android:layout_weight="1" android:layout_height="150dp" android:tag="LegalDescTxt">
+                android:inputType="textMultiLine" android:layout_weight="1" android:layout_height="150dp" android:tag="LegalDescTxt" android:gravity="top|left">
 
             </EditText>
         </TableRow>

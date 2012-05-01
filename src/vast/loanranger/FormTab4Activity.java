@@ -16,8 +16,6 @@ public class FormTab4Activity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form_tab4);
 
-        HashMap data = LoanRangerActivity.currentCase.data;
-        
-        ((EditText)findViewById(R.id.notesEditText)).setText((CharSequence)data.get("CaseNotesTxt"));
+        FormMainActivity.populate(this);
     }
 }

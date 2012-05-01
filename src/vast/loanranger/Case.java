@@ -1,11 +1,8 @@
 package vast.loanranger;
 
 import java.util.HashMap;
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.JSONTokener;
 
 /*
  * The Case Object will be used to store individual cases in the phones memory
@@ -24,7 +21,7 @@ public class Case
 	//
 	//I am also questioning whether or not to allow the map to be directly 
 	//accessed by activities or use getters and setters.
-	protected HashMap<String, String> data = new HashMap<String, String>();
+	protected HashMap<Integer, ValuePair> data = new HashMap<Integer, ValuePair>();
 	//Now we will populate the first row of the HashMap with labels for the data
 	//String[] labels = getApplicationContext().getResources().getStringArray(R.array.edit_text_labels);
 	public static String [] labels = {  "CaseCde", "LoanOfficerName", "BranchCde", "StateCde", "CountyDesc",
@@ -35,28 +32,47 @@ public class Case
 	
 	private boolean newCase = true;
 	private boolean URIGenerated = false;
- 	private String URI;
+ 	private String URI, name;
 	
 	//Constructor for new cases, no parameters are necessary because the data is empty
 	//newCase is set to false because the user has seen the case
-	public Case(){
+	public Case()
+	{
 		newCase = false;
-		for (String s : labels) {
-				data.put(s, "");
-		    }	
+		
 	}
 	
 	//Constructor for cases pulled from the webapp. The data in the JSONObject will be
 	//maped to the second row of the HashMap where the corresponding label is.
-	public Case(JSONObject source){
-		String value;
-		for (String s : labels) {
-			try {
-					value = source.getString(s);
-					data.put(s, value);
-				}
-			catch (JSONException e) {}	
+	public Case(JSONObject source)
+	{
+		try 
+		{
+			name = source.getString("ContactName");
+			data.put(R.id.officerNameEditText, new ValuePair("LoanOfficerName", source.getString("LoanOfficerName")));
+			data.put(R.id.requestingBranchSpinner, new ValuePair("BranchCde", source.getString("BranchCde")));
+			data.put(R.id.stateSpinner, new ValuePair("StateCde", source.getString("StateCde")));
+			data.put(R.id.countyEditText, new ValuePair("CountyDesc", source.getString("CountyDesc")));
+			data.put(R.id.regionalManagerSpinner, new ValuePair("RegionalManagerCde", source.getString("RegionalManagerCde")));
+			
+			data.put(R.id.requestDateEditText, new ValuePair("RequestDte", source.getString("RequestDte")));
+			data.put(R.id.completionDateEditText, new ValuePair("CompletionDte", source.getString("CompletionDte")));
+			data.put(R.id.customerTypeSpinner, new ValuePair("CustomerTypeCde", source.getString("CustomerTypeCde")));
+			data.put(R.id.contactNameEditText, new ValuePair("ContactName", source.getString("ContactName")));
+			data.put(R.id.contactNumberEditText, new ValuePair("ContactPhoneNum", source.getString("ContactPhoneNum")));
+			data.put(R.id.advanceNoticeSpinner, new ValuePair("AdvanceNoticeNecessaryInd", source.getString("AdvanceNoticeNecessaryInd")));
+			
+			data.put(R.id.requestReasonSpinner, new ValuePair("EvaluationReasonCde", source.getString("EvaluationReasonCde")));
+			data.put(R.id.transactionSizeEditText, new ValuePair("TransactionAmt", source.getString("TransactionAmt")));
+			data.put(R.id.propertyAddressEditText, new ValuePair("PropertyAddressTxt", source.getString("PropertyAddressTxt")));
+			data.put(R.id.propertyTypeSpinner, new ValuePair("PropertyTypeCde", source.getString("PropertyTypeCde")));
+			data.put(R.id.propertyComplexitySpinner, new ValuePair("PropertyComplexInd", source.getString("PropertyComplexInd")));
+			data.put(R.id.propertyAcresEditText, new ValuePair("AcresNum", source.getString("AcresNum")));
+			data.put(R.id.legalDescriptionEditText, new ValuePair("LegalDescTxt", source.getString("LegalDescTxt")));
+			data.put(R.id.notesEditText, new ValuePair("CaseNotesTxt", source.getString("CaseNotesTxt")));
 		}
+		catch (JSONException e) 
+		{ }
 	}
 	//send will be called by an activity and will return a message containing the status of the send
 	public String send(){
@@ -79,8 +95,8 @@ public class Case
 	private boolean generateURI(){
 		URI = "http://usethedoorknob.endoftheinternet.org:50181" +
 				"/JsonServiceWNE.svc/LoanRanger/AddCase?";
-		for (HashMap.Entry<String, String> entry : data.entrySet()) {
-		    if(entry.getValue().compareTo("") != 0){
+		for (HashMap.Entry<Integer, ValuePair> entry : data.entrySet()) {
+		    if(!entry.getValue().isEmpty()){
 				URI += entry.getKey() + "=";
 			    URI += entry.getValue();
 		    }
@@ -90,7 +106,10 @@ public class Case
 		
 		return URIGenerated;
 	}
-	public String soLive(){// TODO delete this LOL
-		return "Team Vast is live";
+	
+	// returns the contact name
+	public String getName()
+	{
+		return name;
 	}
 }
