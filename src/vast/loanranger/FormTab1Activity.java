@@ -1,12 +1,8 @@
 package vast.loanranger;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.*;
-import android.view.View;
 
 public class FormTab1Activity extends Activity 
 {   

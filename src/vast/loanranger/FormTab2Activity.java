@@ -1,7 +1,5 @@
 package vast.loanranger;
 
-import java.util.HashMap;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.*;

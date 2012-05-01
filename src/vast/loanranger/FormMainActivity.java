@@ -7,7 +7,6 @@ import android.app.Activity;
 import android.app.TabActivity;
 import android.content.res.*;
 import android.os.Bundle;
-import android.content.Context;
 import android.content.Intent;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -52,6 +51,12 @@ public class FormMainActivity extends TabActivity
     	tabHost.setCurrentTab(0);
     }
     
+    /**
+     * populate
+     * Populates the form editor elements on this activity with the data 
+     * stored in the current Case object.
+     * @param s Activity containing the form elements to be updated.
+     */
     public static void populate(Activity s)
     {
     	Map<Integer, ValuePair> data = LoanRangerActivity.currentCase.data;
@@ -76,7 +81,7 @@ public class FormMainActivity extends TabActivity
         		}
         		else if (currentItem.getLabel().endsWith("Ind"))
         		{
-        			// Element is a true/false Spinner TODO maybe this doesn't need its own case?
+        			// Element is a true/false Spinner
         			spinner = (Spinner)s.findViewById(i);
         			if (currentItem.getValue().equals("true"))
         				spinner.setSelection(0);
@@ -102,31 +107,38 @@ public class FormMainActivity extends TabActivity
         }
     }
     
+    /**
+     * FieldListener
+     * TextWatcher listener for EditText elements. 
+     */
     private static class FieldListener implements TextWatcher
     {
     	int id;
     	EditText parent;
     	String label;
     	
+    	/**
+    	 * Constructor
+    	 * @param id Form element ID (R.id...)
+    	 * @param parent Reference to the EditText from which to pull text
+    	 */
     	public FieldListener(int id, EditText parent)
     	{
     		this.id = id;
     		this.parent = parent;
     	}
 
+    	/**
+    	 * afterTextChanged
+    	 * Updates the current Case object with the appropriate data as it is entered in by the user.
+    	 */
 		public void afterTextChanged(Editable e) {
 			label = LoanRangerActivity.currentCase.data.get(id).getLabel();
 			LoanRangerActivity.currentCase.data.put(id, new ValuePair(label, parent.getText().toString()));
 		}
 
-		public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
-			// TODO Auto-generated method stub
-			
-		}
+		// Unimplemented inherited TextWatcher methods...
+		public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) { }
+		public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) { }
     }
 }

@@ -24,11 +24,11 @@ public class Case
 	protected HashMap<Integer, ValuePair> data = new HashMap<Integer, ValuePair>();
 	//Now we will populate the first row of the HashMap with labels for the data
 	//String[] labels = getApplicationContext().getResources().getStringArray(R.array.edit_text_labels);
-	public static String [] labels = {  "CaseCde", "LoanOfficerName", "BranchCde", "StateCde", "CountyDesc",
+	/*public static String [] labels = {  "CaseCde", "LoanOfficerName", "BranchCde", "StateCde", "CountyDesc",
 						  "RegionalManagerCde", "RequestDte", "CompletionDte", "CustomerTypeCde",
 						  "ContactName", "ContactPhoneNum", "AdvanceNoticeNecessaryInd", "EvaluationReasonCde",
 						  "TransactionAmt", "PropertyAddressTxt", "PropertyTypeCde", "PropertyComplexInd",
-						  "AcresNum", "LegalDescTxt", "CaseNotesTxt" };
+						  "AcresNum", "LegalDescTxt", "CaseNotesTxt" };*/
 	
 	private boolean newCase = true;
 	private boolean URIGenerated = false;
@@ -49,27 +49,27 @@ public class Case
 		try 
 		{
 			name = source.getString("ContactName");
-			data.put(R.id.officerNameEditText, new ValuePair("LoanOfficerName", source.getString("LoanOfficerName")));
-			data.put(R.id.requestingBranchSpinner, new ValuePair("BranchCde", source.getString("BranchCde")));
-			data.put(R.id.stateSpinner, new ValuePair("StateCde", source.getString("StateCde")));
-			data.put(R.id.countyEditText, new ValuePair("CountyDesc", source.getString("CountyDesc")));
-			data.put(R.id.regionalManagerSpinner, new ValuePair("RegionalManagerCde", source.getString("RegionalManagerCde")));
+			data.put(R.id.officerNameEditText, 			new ValuePair("LoanOfficerName", source.getString("LoanOfficerName")));
+			data.put(R.id.requestingBranchSpinner, 		new ValuePair("BranchCde", source.getString("BranchCde")));
+			data.put(R.id.stateSpinner, 				new ValuePair("StateCde", source.getString("StateCde")));
+			data.put(R.id.countyEditText, 				new ValuePair("CountyDesc", source.getString("CountyDesc")));
+			data.put(R.id.regionalManagerSpinner, 		new ValuePair("RegionalManagerCde", source.getString("RegionalManagerCde")));
 			
-			data.put(R.id.requestDateEditText, new ValuePair("RequestDte", source.getString("RequestDte")));
-			data.put(R.id.completionDateEditText, new ValuePair("CompletionDte", source.getString("CompletionDte")));
-			data.put(R.id.customerTypeSpinner, new ValuePair("CustomerTypeCde", source.getString("CustomerTypeCde")));
-			data.put(R.id.contactNameEditText, new ValuePair("ContactName", source.getString("ContactName")));
-			data.put(R.id.contactNumberEditText, new ValuePair("ContactPhoneNum", source.getString("ContactPhoneNum")));
-			data.put(R.id.advanceNoticeSpinner, new ValuePair("AdvanceNoticeNecessaryInd", source.getString("AdvanceNoticeNecessaryInd")));
-			
-			data.put(R.id.requestReasonSpinner, new ValuePair("EvaluationReasonCde", source.getString("EvaluationReasonCde")));
-			data.put(R.id.transactionSizeEditText, new ValuePair("TransactionAmt", source.getString("TransactionAmt")));
-			data.put(R.id.propertyAddressEditText, new ValuePair("PropertyAddressTxt", source.getString("PropertyAddressTxt")));
-			data.put(R.id.propertyTypeSpinner, new ValuePair("PropertyTypeCde", source.getString("PropertyTypeCde")));
-			data.put(R.id.propertyComplexitySpinner, new ValuePair("PropertyComplexInd", source.getString("PropertyComplexInd")));
-			data.put(R.id.propertyAcresEditText, new ValuePair("AcresNum", source.getString("AcresNum")));
-			data.put(R.id.legalDescriptionEditText, new ValuePair("LegalDescTxt", source.getString("LegalDescTxt")));
-			data.put(R.id.notesEditText, new ValuePair("CaseNotesTxt", source.getString("CaseNotesTxt")));
+			data.put(R.id.requestDateEditText, 			new ValuePair("RequestDte", source.getString("RequestDte")));
+			data.put(R.id.completionDateEditText, 		new ValuePair("CompletionDte", source.getString("CompletionDte")));
+			data.put(R.id.customerTypeSpinner, 			new ValuePair("CustomerTypeCde", source.getString("CustomerTypeCde")));
+			data.put(R.id.contactNameEditText, 			new ValuePair("ContactName", source.getString("ContactName")));
+			data.put(R.id.contactNumberEditText, 		new ValuePair("ContactPhoneNum", source.getString("ContactPhoneNum")));
+			data.put(R.id.advanceNoticeSpinner, 		new ValuePair("AdvanceNoticeNecessaryInd", source.getString("AdvanceNoticeNecessaryInd")));
+				
+			data.put(R.id.requestReasonSpinner, 		new ValuePair("EvaluationReasonCde", source.getString("EvaluationReasonCde")));
+			data.put(R.id.transactionSizeEditText, 		new ValuePair("TransactionAmt", source.getString("TransactionAmt")));
+			data.put(R.id.propertyAddressEditText, 		new ValuePair("PropertyAddressTxt", source.getString("PropertyAddressTxt")));
+			data.put(R.id.propertyTypeSpinner, 			new ValuePair("PropertyTypeCde", source.getString("PropertyTypeCde")));
+			data.put(R.id.propertyComplexitySpinner, 	new ValuePair("PropertyComplexInd", source.getString("PropertyComplexInd")));
+			data.put(R.id.propertyAcresEditText, 		new ValuePair("AcresNum", source.getString("AcresNum")));
+			data.put(R.id.legalDescriptionEditText, 	new ValuePair("LegalDescTxt", source.getString("LegalDescTxt")));
+			data.put(R.id.notesEditText, 				new ValuePair("CaseNotesTxt", source.getString("CaseNotesTxt")));
 		}
 		catch (JSONException e) 
 		{ }

@@ -1,27 +1,25 @@
 package vast.loanranger;
 
-import java.io.IOException;
-
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.BasicResponseHandler;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONArray;
-import org.json.JSONException;
-
-import vast.loanranger.R;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.content.Intent;
+import android.graphics.Color;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.PriorityQueue;
 
+import org.apache.http.client.*;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
+import org.json.JSONException;
+import vast.loanranger.R;
 
 public class LoanRangerActivity extends Activity 
 {
@@ -99,25 +97,57 @@ public class LoanRangerActivity extends Activity
      */
     public void populateCaseList()
     {
+    	PriorityQueue<ContactEntry> contactList = new PriorityQueue<ContactEntry>(cases.length);
     	TextView t;
-    	ValuePair v;
+    	View sep;
+    	
     	for (int i = 0; i < cases.length; i++)
     	{
+    		contactList.offer(new ContactEntry(cases[i]));
+    	}
+
+    	Object[] contacts = contactList.toArray();
+    	ContactEntry contact;
+    	Arrays.sort(contacts);
+    	for (int i = 0; i < contacts.length; i++)
+    	{
+    		contact = (ContactEntry)contacts[i];
+    		
+    		if (i != 0)
+    		{
+    			// Separators
+        		sep = new View(this);
+        		sep.setBackgroundColor(Color.WHITE);
+        		sep.setMinimumHeight(2);
+        		contactsTableLayout.addView(sep);
+    		}
+    		
+    		// TextViews
     		t = new TextView(this);
-    		t.setOnClickListener(new caseClickListener(cases[i]));
-    		t.setText(cases[i].getName());
+    		t.setOnClickListener(new caseClickListener(contact.getCase()));
+    		t.setText(contact.getName());
     		t.setTextSize(18);
+    		t.setTextColor(Color.WHITE);
     		t.setHeight(50);
     		contactsTableLayout.addView(t);
+    		
     	}
     }
 
-
+    /**
+     * getCurrentCase
+     * @return Reference to the currently "open" case object
+     */
 	public static Case getCurrentCase()
     {
     	return currentCase;
     }
     
+	/**
+	 * setCurrentCase
+	 * @param c Case to "open"
+	 * @return False if setting to a null case
+	 */
     public static boolean setCurrentCase(Case c)
     {
     	currentCase = c;
@@ -131,6 +161,11 @@ public class LoanRangerActivity extends Activity
     private class caseClickListener implements OnClickListener
     {
     	private Case c;
+    	
+    	/**
+    	 * Constructor
+    	 * @param c Case to link to when this case item is clicked in the list.
+    	 */
     	public caseClickListener(Case c)
     	{
     		super();
@@ -146,5 +181,82 @@ public class LoanRangerActivity extends Activity
     	   }
     	   catch (Exception e) { }
        }
-    };
+    }
+    
+    /**
+     * ContactEntry
+     * Used to heapify the contact names list by last name
+     */
+    private class ContactEntry implements Comparable<ContactEntry>
+    {
+    	private Case c;
+    	private String fullName, fname, lname;
+    	
+    	/**
+    	 * Constructor
+    	 * @param c Case represented by this ContactEntry
+    	 */
+    	public ContactEntry(Case c)
+    	{
+    		this.fullName = c.getName();
+    		this.c = c;
+    		this.lname = fullName;
+    		
+    		// Parse last name
+    		if (lname.contains(","))
+    		{
+    			fname = fullName.substring(fullName.indexOf(","));
+    			lname = fullName.substring(0, fullName.indexOf(","));
+    			fname = fname.trim();
+    			lname = lname.trim();
+    		}
+    		else if (lname.contains(" "))
+    		{
+    			fname = fullName.substring(0, fullName.indexOf(" "));
+    			lname = fullName.substring(fullName.indexOf(" "));
+    			fname = fname.trim();
+    			lname = lname.trim();
+    		}
+    		
+    		// Format full name
+    		fullName = lname + " , " + fname;
+    	}
+    	
+    	/**
+    	 * compareTo
+    	 * @param other Other ContactEntry object to compare to
+    	 * @return Results of String.compareTo()
+    	 */
+		public int compareTo(ContactEntry other) 
+		{
+			return lname.compareTo(other.getLastName());
+		}
+		
+		/**
+		 * getCase
+		 * @return Case object represented by this ContactEntry
+		 */
+    	public Case getCase()
+    	{
+    		return c;
+    	}
+    	
+    	/**
+    	 * getName
+    	 * @return Contact's full name
+    	 */
+    	public String getName()
+    	{
+    		return fullName;
+    	}
+    	
+    	/**
+    	 * getLastName
+    	 * @return Contact's last name
+    	 */
+    	public String getLastName()
+    	{
+    		return lname;
+    	}
+    }
 }
