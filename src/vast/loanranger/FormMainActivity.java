@@ -44,5 +44,6 @@ public class FormMainActivity extends TabActivity
 
     	// Set default tab
     	tabHost.setCurrentTab(0);
+    	FormTab2Activity.requestDateEditText.getText(); // TODO WUT
     }
 }

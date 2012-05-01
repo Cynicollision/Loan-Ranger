@@ -1,14 +1,14 @@
 package vast.loanranger;
 
+import java.util.HashMap;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.*;
+import android.view.View;
 
 public class FormTab1Activity extends Activity 
 {   
-	EditText officerNameEditText, 
-	 		 countyEditText;
-	
 	Spinner requestingBranchSpinner,
 			stateSpinner,
 			regionalManagerSpinner;
@@ -36,5 +36,25 @@ public class FormTab1Activity extends Activity
         adapter = ArrayAdapter.createFromResource(this, R.array.options_regional_manager, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         regionalManagerSpinner.setAdapter(adapter);
+        
+        HashMap data = LoanRangerActivity.currentCase.data;
+        
+        ((EditText)findViewById(R.id.officerNameEditText)).setText((CharSequence)data.get("LoanOfficerName"));
+        ((EditText)findViewById(R.id.countyEditText)).setText((CharSequence)data.get("CountyDesc"));
+        
+        /*
+        View v = new View(this);
+        EditText w;
+        for (String s : Case.labels)
+        {
+        	//w = (EditText)findViewById(R.id.officerNameEditText);
+        	//w.setText(w.getTag().toString());
+        	if (v !=null)//(!s.substring(s.length()-3).equals("Cde"))
+        	{
+        		w = (EditText)v.findViewWithTag(s);
+        		w.setText("lol");
+        	}
+        }
+        */
     }
 }

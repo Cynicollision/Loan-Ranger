@@ -1,5 +1,7 @@
 package vast.loanranger;
 
+import java.util.HashMap;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.*;
@@ -38,5 +40,12 @@ public class FormTab3Activity extends Activity
         adapter = ArrayAdapter.createFromResource(this, R.array.options_property_complexity, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         propertyComplexitySpinner.setAdapter(adapter);
+        
+        HashMap data = LoanRangerActivity.currentCase.data;
+        
+        ((EditText)findViewById(R.id.transactionSizeEditText)).setText((CharSequence)data.get("TransactionAmt"));
+        ((EditText)findViewById(R.id.propertyAddressEditText)).setText((CharSequence)data.get("PropertyAddressTxt"));
+        ((EditText)findViewById(R.id.propertyAcresEditText)).setText((CharSequence)data.get("AcresNum"));
+        ((EditText)findViewById(R.id.legalDescriptionEditText)).setText((CharSequence)data.get("LegalDescTxt"));
     }
 }

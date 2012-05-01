@@ -7,8 +7,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
-import android.app.Application;
-
 /*
  * The Case Object will be used to store individual cases in the phones memory
  * it was also be able to take the data contained inside of it and generate
@@ -18,7 +16,8 @@ import android.app.Application;
  * containing several case objects that will either be pulled from the FPI servers
  * or created locally on the phone
  */
-public class Case extends Application{
+public class Case 
+{
 	//HashMap structure will contain labels and data corresponding to the data,
 	//this map will also be self validating, so perhaps we should add another
 	//row which will specify whether or not the data is required
@@ -27,7 +26,13 @@ public class Case extends Application{
 	//accessed by activities or use getters and setters.
 	protected HashMap<String, String> data = new HashMap<String, String>();
 	//Now we will populate the first row of the HashMap with labels for the data
-	String[] labels = this.getApplicationContext().getResources().getStringArray(R.array.edit_text_labels);
+	//String[] labels = getApplicationContext().getResources().getStringArray(R.array.edit_text_labels);
+	public static String [] labels = {  "CaseCde", "LoanOfficerName", "BranchCde", "StateCde", "CountyDesc",
+						  "RegionalManagerCde", "RequestDte", "CompletionDte", "CustomerTypeCde",
+						  "ContactName", "ContactPhoneNum", "AdvanceNoticeNecessaryInd", "EvaluationReasonCde",
+						  "TransactionAmt", "PropertyAddressTxt", "PropertyTypeCde", "PropertyComplexInd",
+						  "AcresNum", "LegalDescTxt", "CaseNotesTxt" };
+	
 	private boolean newCase = true;
 	private boolean URIGenerated = false;
  	private String URI;
@@ -85,7 +90,7 @@ public class Case extends Application{
 		
 		return URIGenerated;
 	}
-	public String soLive(){
+	public String soLive(){// TODO delete this LOL
 		return "Team Vast is live";
 	}
 }
