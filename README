@@ -1,2 +1,10 @@
-LOAN RANGER by TEAM VAST (in progress)
-Editing this so I can tell if I set up Git correctly (again)
+TODO:
+- Make Spinners set to the right value when loading a case.
+- Get the values out of all form elements
+- Menu for sending the case (menu key)
+	- Generate URI 
+- Listener for form element to call customer
+- Searching and filtering the case list
+- Form validation
+- Alert user of corrections necessary to form (if invalid)
+- Alert user that case has been successfully sent (if valid)
