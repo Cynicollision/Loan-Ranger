@@ -2,9 +2,26 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android" 
    android:id="@+id/tableLayout" android:layout_width="match_parent" 
    android:layout_height="match_parent" android:padding="5dp" 
-   android:stretchColumns="*" android:background="@android:color/black">
+   android:stretchColumns="*">
    
-   <TableRow android:id="@+id/tableRow0" 
+    <TableRow android:id="@+id/tableRow0"  
+      android:background="@android:color/black"
+      android:layout_height="wrap_content" 
+      android:layout_width="match_parent">
+
+        <EditText
+            android:id="@+id/filterEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10" android:hint="@string/main_search_hint">
+
+            <requestFocus />
+        </EditText>
+
+   </TableRow>
+    
+   <TableRow android:id="@+id/tableRow1"  
+      android:background="@android:color/black"
       android:layout_height="wrap_content" 
       android:layout_width="match_parent">
 
@@ -16,7 +33,7 @@
 
    </TableRow>
 
-   <TableRow android:id="@+id/tableRow1" 
+   <TableRow android:id="@+id/tableRow2"  android:background="@android:color/white"
       android:layout_height="wrap_content" 
       android:layout_width="match_parent" android:layout_weight="1">
       

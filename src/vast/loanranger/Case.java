@@ -30,16 +30,14 @@ public class Case
 						  "TransactionAmt", "PropertyAddressTxt", "PropertyTypeCde", "PropertyComplexInd",
 						  "AcresNum", "LegalDescTxt", "CaseNotesTxt" };*/
 	
-	private boolean newCase = true;
 	private boolean URIGenerated = false;
- 	private String URI, name;
+ 	private String name, URI;
 	
 	//Constructor for new cases, no parameters are necessary because the data is empty
 	//newCase is set to false because the user has seen the case
 	public Case()
 	{
-		newCase = false;
-		
+		LoanRangerActivity.setCurrentCase(this);
 	}
 	
 	//Constructor for cases pulled from the webapp. The data in the JSONObject will be
@@ -48,13 +46,17 @@ public class Case
 	{
 		try 
 		{
+			// Get the contact name
 			name = source.getString("ContactName");
+			
+			// Tab 1 elements
 			data.put(R.id.officerNameEditText, 			new ValuePair("LoanOfficerName", source.getString("LoanOfficerName")));
 			data.put(R.id.requestingBranchSpinner, 		new ValuePair("BranchCde", source.getString("BranchCde")));
 			data.put(R.id.stateSpinner, 				new ValuePair("StateCde", source.getString("StateCde")));
 			data.put(R.id.countyEditText, 				new ValuePair("CountyDesc", source.getString("CountyDesc")));
 			data.put(R.id.regionalManagerSpinner, 		new ValuePair("RegionalManagerCde", source.getString("RegionalManagerCde")));
 			
+			// Tab 2 elements
 			data.put(R.id.requestDateEditText, 			new ValuePair("RequestDte", source.getString("RequestDte")));
 			data.put(R.id.completionDateEditText, 		new ValuePair("CompletionDte", source.getString("CompletionDte")));
 			data.put(R.id.customerTypeSpinner, 			new ValuePair("CustomerTypeCde", source.getString("CustomerTypeCde")));
@@ -62,6 +64,7 @@ public class Case
 			data.put(R.id.contactNumberEditText, 		new ValuePair("ContactPhoneNum", source.getString("ContactPhoneNum")));
 			data.put(R.id.advanceNoticeSpinner, 		new ValuePair("AdvanceNoticeNecessaryInd", source.getString("AdvanceNoticeNecessaryInd")));
 				
+			// Tab 3 elements
 			data.put(R.id.requestReasonSpinner, 		new ValuePair("EvaluationReasonCde", source.getString("EvaluationReasonCde")));
 			data.put(R.id.transactionSizeEditText, 		new ValuePair("TransactionAmt", source.getString("TransactionAmt")));
 			data.put(R.id.propertyAddressEditText, 		new ValuePair("PropertyAddressTxt", source.getString("PropertyAddressTxt")));
@@ -69,6 +72,8 @@ public class Case
 			data.put(R.id.propertyComplexitySpinner, 	new ValuePair("PropertyComplexInd", source.getString("PropertyComplexInd")));
 			data.put(R.id.propertyAcresEditText, 		new ValuePair("AcresNum", source.getString("AcresNum")));
 			data.put(R.id.legalDescriptionEditText, 	new ValuePair("LegalDescTxt", source.getString("LegalDescTxt")));
+			
+			// Tab 4 element
 			data.put(R.id.notesEditText, 				new ValuePair("CaseNotesTxt", source.getString("CaseNotesTxt")));
 		}
 		catch (JSONException e) 
@@ -107,9 +112,24 @@ public class Case
 		return URIGenerated;
 	}
 	
-	// returns the contact name
+	/**
+	 * getName
+	 * Returns the contact name for this case, to be used to populate 
+	 * the list of contacts on the main screen.
+	 * @return The "contact name" of this case
+	 */
 	public String getName()
 	{
 		return name;
+	}
+	
+	/**
+	 * isValid
+	 * @return True if the data in this case is valid, i.e.,
+	 * is ready to be submitted to the web service.
+	 */
+	public boolean isValid()
+	{
+		return true == false; // TODO lolwut
 	}
 }

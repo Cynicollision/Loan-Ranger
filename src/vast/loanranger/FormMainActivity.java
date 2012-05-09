@@ -10,7 +10,9 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.*;
+import android.widget.AdapterView.OnItemSelectedListener;
 
 
 public class FormMainActivity extends TabActivity 
@@ -59,7 +61,7 @@ public class FormMainActivity extends TabActivity
      */
     public static void populate(Activity s)
     {
-    	Map<Integer, ValuePair> data = LoanRangerActivity.currentCase.data;
+    	Map<Integer, ValuePair> data = LoanRangerActivity.getCurrentCase().data;
         EditText edittext;
         Spinner spinner;
         String str;
@@ -73,7 +75,7 @@ public class FormMainActivity extends TabActivity
         		currentItem = data.get(i);
         		if (currentItem.getLabel().endsWith("Cde"))
         		{
-        			// Element is a regular Spinner
+        			// 1) Element is a regular Spinner
         			spinner = (Spinner)s.findViewById(i);
         			spinner.setSelection(Integer.parseInt(currentItem.getValue()));
         			
@@ -81,18 +83,18 @@ public class FormMainActivity extends TabActivity
         		}
         		else if (currentItem.getLabel().endsWith("Ind"))
         		{
-        			// Element is a true/false Spinner
+        			// 2) Element is a true/false Spinner
         			spinner = (Spinner)s.findViewById(i);
         			if (currentItem.getValue().equals("true"))
         				spinner.setSelection(0);
         			else
         				spinner.setSelection(1);
         			
-        			// TODO add spinner change listener
+        			spinner.setOnItemSelectedListener(new SpinnerListener(i, spinner));
         		}
         		else
         		{
-        			// Element is an EditText
+        			// 3) Element is an EditText
         			str = currentItem.getValue();
         			edittext = (EditText)s.findViewById(i);
         			
@@ -132,13 +134,36 @@ public class FormMainActivity extends TabActivity
     	 * afterTextChanged
     	 * Updates the current Case object with the appropriate data as it is entered in by the user.
     	 */
-		public void afterTextChanged(Editable e) {
-			label = LoanRangerActivity.currentCase.data.get(id).getLabel();
-			LoanRangerActivity.currentCase.data.put(id, new ValuePair(label, parent.getText().toString()));
+		public void afterTextChanged(Editable e) 
+		{
+			label = LoanRangerActivity.getCurrentCase().data.get(id).getLabel();
+			LoanRangerActivity.getCurrentCase().data.put(id, new ValuePair(label, parent.getText().toString()));
 		}
 
 		// Unimplemented inherited TextWatcher methods...
 		public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) { }
 		public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) { }
+    }
+    
+    private static class SpinnerListener implements OnItemSelectedListener
+    {
+    	private int id;
+    	private Spinner parent;
+    	String label;
+    	
+    	public SpinnerListener(int id, Spinner parent)
+    	{
+    		this.id = id;
+    		this.parent = parent;
+    	}
+		public void onItemSelected(AdapterView<?> adapter, View parent, int position, long n) 
+		{
+			
+			label = LoanRangerActivity.getCurrentCase().data.get(id).getLabel();
+			LoanRangerActivity.getCurrentCase().data.put(id, new ValuePair(label, "" + position));
+		}
+
+		public void onNothingSelected(AdapterView<?> arg0) { }
+    	
     }
 }

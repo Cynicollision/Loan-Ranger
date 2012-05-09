@@ -25,22 +25,22 @@ public class FormTab1Activity extends Activity
     	stateSpinner = (Spinner)findViewById(R.id.stateSpinner);
     	regionalManagerSpinner = (Spinner)findViewById(R.id.regionalManagerSpinner);
     	
-        ArrayAdapter<CharSequence> adapter;
+        ArrayAdapter<CharSequence> adapterRequestingBranch,
+        						   adapterState,
+        						   adapterRegionalManager;
         
-        adapter = ArrayAdapter.createFromResource(this, R.array.options_requesting_branch, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        requestingBranchSpinner.setAdapter(adapter);
+        adapterRequestingBranch = ArrayAdapter.createFromResource(this, R.array.options_requesting_branch, android.R.layout.simple_spinner_item);
+        adapterRequestingBranch.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        requestingBranchSpinner.setAdapter(adapterRequestingBranch);
         
-        adapter = ArrayAdapter.createFromResource(this, R.array.options_state, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        stateSpinner.setAdapter(adapter);
+        adapterState = ArrayAdapter.createFromResource(this, R.array.options_state, android.R.layout.simple_spinner_item);
+        adapterState.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        stateSpinner.setAdapter(adapterState);
         
-        adapter = ArrayAdapter.createFromResource(this, R.array.options_regional_manager, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        regionalManagerSpinner.setAdapter(adapter);
+        adapterRegionalManager = ArrayAdapter.createFromResource(this, R.array.options_regional_manager, android.R.layout.simple_spinner_item);
+        adapterRegionalManager.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        regionalManagerSpinner.setAdapter(adapterRegionalManager);
         
         FormMainActivity.populate(this);
     }
-    
-    
 }

@@ -14,7 +14,7 @@
     
     <!-- MAIN SCREEN -->
     <string name="main_search_hint">Search</string>
-    <string name="main_new_case">+ New Case</string>
+    <string name="main_new_case">Create New Case</string>
     
     <!-- NOTES SCREEN -->
     <string name="notes_title">Case Notes</string>

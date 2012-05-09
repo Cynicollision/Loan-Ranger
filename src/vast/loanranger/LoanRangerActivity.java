@@ -2,13 +2,15 @@ package vast.loanranger;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.content.Intent;
 import android.graphics.Color;
-import android.widget.Button;
-import android.widget.TableLayout;
-import android.widget.TextView;
+import android.widget.*;
+
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.PriorityQueue;
@@ -21,15 +23,16 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import vast.loanranger.R;
 
-public class LoanRangerActivity extends Activity 
+public class LoanRangerActivity extends Activity implements TextWatcher
 {
-	public static Case currentCase;
+	private static Case currentCase;
 	public static Case[] cases;
 	private final String URI_GETCASES = "http://usethedoorknob.endoftheinternet.org:50181/JsonServiceWNE.svc/LoanRanger/GetCases";
 	private final String URL_GETINDIVIDUALCASE = "http://usethedoorknob.endoftheinternet.org:50181/JsonServiceWNE.svc/LoanRanger/GetIndividualCase?CaseCde=";
 	private Button newCaseButton;
 	private TableLayout contactsTableLayout;
-	
+	private EditText filterEditText;
+	private static String filter;
 	
 	/**
 	 * onCreate
@@ -39,8 +42,10 @@ public class LoanRangerActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        
+        filter = "";
         contactsTableLayout = (TableLayout) findViewById(R.id.contactsTableLayout);
+        filterEditText = (EditText) findViewById(R.id.filterEditText);
+        filterEditText.addTextChangedListener(this);
         newCaseButton = (Button) findViewById(R.id.newCaseButton);
         newCaseButton.setOnClickListener(new OnClickListener() {
            public void onClick(View v) 
@@ -97,13 +102,22 @@ public class LoanRangerActivity extends Activity
      */
     public void populateCaseList()
     {
-    	PriorityQueue<ContactEntry> contactList = new PriorityQueue<ContactEntry>(cases.length);
+    	clearCaseList();
+    	ContactEntry current;
+    	PriorityQueue<ContactEntry> contactList = new PriorityQueue<ContactEntry>();
     	TextView t;
     	View sep;
     	
     	for (int i = 0; i < cases.length; i++)
     	{
-    		contactList.offer(new ContactEntry(cases[i]));
+    		current = new ContactEntry(cases[i]);
+    		if (!filter.trim().equals(""))
+    		{
+    			if ((current.firstName.startsWith(filter) || current.lastName.startsWith(filter)))
+        			contactList.add(current);
+    		}
+    		else
+    			contactList.add(current);
     	}
 
     	Object[] contacts = contactList.toArray();
@@ -113,25 +127,34 @@ public class LoanRangerActivity extends Activity
     	{
     		contact = (ContactEntry)contacts[i];
     		
-    		if (i != 0)
+    		/*if (i != 0)
     		{
     			// Separators
         		sep = new View(this);
-        		sep.setBackgroundColor(Color.WHITE);
-        		sep.setMinimumHeight(2);
+        		sep.setBackgroundColor(Color.GRAY);
+        		sep.setMinimumHeight(1);
         		contactsTableLayout.addView(sep);
-    		}
+    		}*/
     		
     		// TextViews
     		t = new TextView(this);
     		t.setOnClickListener(new caseClickListener(contact.getCase()));
-    		t.setText(contact.getName());
+    		t.setText(contact.fullName);
     		t.setTextSize(18);
-    		t.setTextColor(Color.WHITE);
-    		t.setHeight(50);
+    		t.setGravity(Gravity.CENTER_VERTICAL);
+    		t.setTextColor(Color.BLACK);
+    		t.setHeight(60);
     		contactsTableLayout.addView(t);
-    		
     	}
+    }
+    
+    /**
+     * Clears all the elements of the contacts list
+     */
+    public void clearCaseList()
+    {
+    	for (int i = 0; i < contactsTableLayout.getChildCount(); i++)
+    		contactsTableLayout.removeViewAt(i);
     }
 
     /**
@@ -190,7 +213,7 @@ public class LoanRangerActivity extends Activity
     private class ContactEntry implements Comparable<ContactEntry>
     {
     	private Case c;
-    	private String fullName, fname, lname;
+    	private String fullName, firstName, lastName;
     	
     	/**
     	 * Constructor
@@ -200,26 +223,28 @@ public class LoanRangerActivity extends Activity
     	{
     		this.fullName = c.getName();
     		this.c = c;
-    		this.lname = fullName;
+    		this.lastName = fullName;
     		
     		// Parse last name
-    		if (lname.contains(","))
+    		if (lastName.contains(","))
     		{
-    			fname = fullName.substring(fullName.indexOf(","));
-    			lname = fullName.substring(0, fullName.indexOf(","));
-    			fname = fname.trim();
-    			lname = lname.trim();
+    			firstName = fullName.substring(fullName.indexOf(","));
+    			lastName = fullName.substring(0, fullName.indexOf(","));
+    			firstName = firstName.trim();
+    			lastName = lastName.trim();
     		}
-    		else if (lname.contains(" "))
+    		else if (lastName.contains(" "))
     		{
-    			fname = fullName.substring(0, fullName.indexOf(" "));
-    			lname = fullName.substring(fullName.indexOf(" "));
-    			fname = fname.trim();
-    			lname = lname.trim();
+    			firstName = fullName.substring(0, fullName.indexOf(" "));
+    			lastName = fullName.substring(fullName.indexOf(" "));
+    			firstName = firstName.trim();
+    			lastName = lastName.trim();
     		}
     		
     		// Format full name
-    		fullName = lname + " , " + fname;
+    		fullName = lastName + " , " + firstName;
+    		lastName = lastName.toLowerCase();
+    		firstName = firstName.toLowerCase();
     	}
     	
     	/**
@@ -229,7 +254,7 @@ public class LoanRangerActivity extends Activity
     	 */
 		public int compareTo(ContactEntry other) 
 		{
-			return lname.compareTo(other.getLastName());
+			return lastName.compareTo(other.lastName);
 		}
 		
 		/**
@@ -240,23 +265,19 @@ public class LoanRangerActivity extends Activity
     	{
     		return c;
     	}
-    	
-    	/**
-    	 * getName
-    	 * @return Contact's full name
-    	 */
-    	public String getName()
-    	{
-    		return fullName;
-    	}
-    	
-    	/**
-    	 * getLastName
-    	 * @return Contact's last name
-    	 */
-    	public String getLastName()
-    	{
-    		return lname;
-    	}
     }
+
+    /**
+     * afterTextChanged
+     * Called when the user updates the contents of the search filter field.
+     */
+	public void afterTextChanged(Editable e) 
+	{
+		filter = filterEditText.getText().toString().toLowerCase();
+		populateCaseList();
+	}
+
+	// Unimplemented TextWatcher methods...
+	public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) { }
+	public void onTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) { }
 }
