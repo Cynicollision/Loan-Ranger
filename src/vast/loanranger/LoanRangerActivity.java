@@ -127,15 +127,6 @@ public class LoanRangerActivity extends Activity implements TextWatcher
     	{
     		contact = (ContactEntry)contacts[i];
     		
-    		/*if (i != 0)
-    		{
-    			// Separators
-        		sep = new View(this);
-        		sep.setBackgroundColor(Color.GRAY);
-        		sep.setMinimumHeight(1);
-        		contactsTableLayout.addView(sep);
-    		}*/
-    		
     		// TextViews
     		t = new TextView(this);
     		t.setOnClickListener(new caseClickListener(contact.getCase()));
