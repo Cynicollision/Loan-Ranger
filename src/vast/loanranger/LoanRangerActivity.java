@@ -26,12 +26,12 @@ import vast.loanranger.R;
 public class LoanRangerActivity extends Activity implements TextWatcher
 {
 	private static Case currentCase;
-	public static Case[] cases;
 	private final String URI_GETCASES = "http://usethedoorknob.endoftheinternet.org:50181/JsonServiceWNE.svc/LoanRanger/GetCases";
 	private final String URL_GETINDIVIDUALCASE = "http://usethedoorknob.endoftheinternet.org:50181/JsonServiceWNE.svc/LoanRanger/GetIndividualCase?CaseCde=";
 	private Button newCaseButton;
-	private TableLayout contactsTableLayout;
+	private Case[] cases;
 	private EditText filterEditText;
+	private TableLayout contactsTableLayout;
 	private static String filter;
 	
 	/**
@@ -53,6 +53,7 @@ public class LoanRangerActivity extends Activity implements TextWatcher
         	   Intent i = new Intent(LoanRangerActivity.this, FormMainActivity.class);
         	   try
         	   { 
+        		   setCurrentCase(new Case());
         		   startActivity(i);
         	   }
         	   catch (Exception e) { }
@@ -60,6 +61,14 @@ public class LoanRangerActivity extends Activity implements TextWatcher
         
         // Load cases and populate the ScrollView
         loadCases();
+        populateCaseList();
+    }
+    
+    @Override
+    public void onResume()
+    {
+    	super.onResume();
+    	loadCases();
         populateCaseList();
     }
     
@@ -106,7 +115,6 @@ public class LoanRangerActivity extends Activity implements TextWatcher
     	ContactEntry current;
     	PriorityQueue<ContactEntry> contactList = new PriorityQueue<ContactEntry>();
     	TextView t;
-    	View sep;
     	
     	for (int i = 0; i < cases.length; i++)
     	{
@@ -144,8 +152,7 @@ public class LoanRangerActivity extends Activity implements TextWatcher
      */
     public void clearCaseList()
     {
-    	for (int i = 0; i < contactsTableLayout.getChildCount(); i++)
-    		contactsTableLayout.removeViewAt(i);
+    	contactsTableLayout.removeAllViews();
     }
 
     /**
@@ -233,7 +240,7 @@ public class LoanRangerActivity extends Activity implements TextWatcher
     		}
     		
     		// Format full name
-    		fullName = lastName + " , " + firstName;
+    		fullName = lastName + ", " + firstName;
     		lastName = lastName.toLowerCase();
     		firstName = firstName.toLowerCase();
     	}

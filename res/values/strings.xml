@@ -55,6 +55,7 @@
     
     <!-- SPINNER OPTIONS - REQUESTING BRANCH -->
     <string-array name="options_requesting_branch">
+        <item></item>
         <item>Bedford</item>
         <item>Bridgeton</item>
         <item>Burrville</item>
@@ -75,6 +76,7 @@
     
     <!-- SPINNER OPTIONS - STATE -->
     <string-array name="options_state">
+        <item></item>
         <item>Alabama</item>
 		<item>Alaska</item>
 		<item>Arizona</item>
@@ -129,6 +131,7 @@
     
     <!-- SPINNER OPTIONS - REGIONAL MANAGER AREA -->
     <string-array name="options_regional_manager">
+        <item></item>
         <item>Boone</item>
         <item>Bradley</item>
         <item>Caltabiano</item>
@@ -136,6 +139,7 @@
     
     <!-- SPINNER OPTIONS - CUSTOMER TYPE -->
     <string-array name="options_customer_type">
+        <item></item>
         <item>Internal - Credit</item>
         <item>Internal - YBSF</item>
         <item>External - Fee</item>
@@ -143,12 +147,14 @@
     
     <!-- SPINNER OPTIONS - ADVANCE NOTICE -->
     <string-array name="options_advance_notice">
+        <item></item>
         <item>Yes</item>
         <item>No</item>
     </string-array>
     
     <!-- SPINNER OPTIONS - EVALUATION REASON -->
     <string-array name="options_evaluation_reason">
+        <item></item>
         <item>New Loan</item>
         <item>Loan Servicing</item>
         <item>Additional Collateral</item>
@@ -160,6 +166,7 @@
     
     <!-- SPINNER OPTIONS - PROPERTY TYPE -->
     <string-array name="options_property_type">
+        <item></item>
         <item>Ag - Vacant</item>
         <item>Ag - Improved</item>
         <item>Commercial</item>
@@ -173,12 +180,14 @@
     
     <!-- SPINNER OPTIONS - PROPERTY COMPLEXITY -->
     <string-array name="options_property_complexity">
+        <item></item>
         <item>Complex</item>
         <item>NonComplex</item>
     </string-array>
     
     <!-- edit text Labels -->
     <string-array name="edit_text_labels">
+        <item></item>
 		<item>CaseCde</item>  
 		<item>LoanOfficerName</item> 
 		<item>BranchCde</item> 
@@ -200,5 +209,10 @@
 		<item>LegalDescTxt</item> 
 		<item>CaseNotesTxt</item> 
 	</string-array>
+	
+    <!--  MENU ITEMS -->
+    <string name="menuitem_send">Send</string>
+    <string name="menuitem_revert">Revert</string>
+    <string name="menuitem_clear">Clear All</string>
     
 </resources>

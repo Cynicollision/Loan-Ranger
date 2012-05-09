@@ -41,6 +41,12 @@ public class FormTab1Activity extends Activity
         adapterRegionalManager.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         regionalManagerSpinner.setAdapter(adapterRegionalManager);
         
+        FormMainActivity.tab1 = this;
         FormMainActivity.populate(this);
+    }
+    
+    public void refresh()
+    {
+    	FormMainActivity.populate(this);
     }
 }

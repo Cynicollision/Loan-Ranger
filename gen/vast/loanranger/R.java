@@ -47,53 +47,54 @@ public final class R {
         public static final int ic_tab4=0x7f020004;
     }
     public static final class id {
-        public static final int advanceNoticeSpinner=0x7f060018;
+        public static final int advanceNoticeSpinner=0x7f060019;
         public static final int completionDateEditText=0x7f060012;
         public static final int contactNameEditText=0x7f060014;
-        public static final int contactNumberEditText=0x7f060015;
-        public static final int contactsScrollView=0x7f060029;
-        public static final int contactsTableLayout=0x7f06002a;
+        public static final int contactNumberEditText=0x7f060016;
+        public static final int contactNumberTextView=0x7f060015;
+        public static final int contactsScrollView=0x7f06002a;
+        public static final int contactsTableLayout=0x7f06002b;
         public static final int countyEditText=0x7f06000c;
         public static final int customerTypeSpinner=0x7f060013;
-        public static final int filterEditText=0x7f060027;
+        public static final int filterEditText=0x7f060028;
         public static final int formTab1Title=0x7f060000;
         public static final int formTab2Title=0x7f060010;
-        public static final int formTab3Title=0x7f060019;
-        public static final int formTab4Title=0x7f060023;
-        public static final int legalDescriptionEditText=0x7f060022;
-        public static final int linearLayout1=0x7f06002c;
-        public static final int newCaseButton=0x7f060028;
-        public static final int notesCancelButton=0x7f06002d;
-        public static final int notesEditText=0x7f060024;
-        public static final int notesSaveButton=0x7f06002e;
-        public static final int notesTextView=0x7f06002b;
+        public static final int formTab3Title=0x7f06001a;
+        public static final int formTab4Title=0x7f060024;
+        public static final int legalDescriptionEditText=0x7f060023;
+        public static final int linearLayout1=0x7f06002d;
+        public static final int newCaseButton=0x7f060029;
+        public static final int notesCancelButton=0x7f06002e;
+        public static final int notesEditText=0x7f060025;
+        public static final int notesSaveButton=0x7f06002f;
+        public static final int notesTextView=0x7f06002c;
         public static final int officerNameEditText=0x7f060003;
-        public static final int propertyAcresEditText=0x7f06001f;
-        public static final int propertyAddressEditText=0x7f06001c;
-        public static final int propertyComplexitySpinner=0x7f06001e;
-        public static final int propertyTypeSpinner=0x7f06001d;
+        public static final int propertyAcresEditText=0x7f060020;
+        public static final int propertyAddressEditText=0x7f06001d;
+        public static final int propertyComplexitySpinner=0x7f06001f;
+        public static final int propertyTypeSpinner=0x7f06001e;
         public static final int regionalManagerSpinner=0x7f06000f;
         public static final int requestDateEditText=0x7f060011;
-        public static final int requestReasonSpinner=0x7f06001a;
+        public static final int requestReasonSpinner=0x7f06001b;
         public static final int requestingBranchSpinner=0x7f060006;
         public static final int stateSpinner=0x7f060009;
-        public static final int tableLayout=0x7f060025;
-        public static final int tableRow0=0x7f060026;
+        public static final int tableLayout=0x7f060026;
+        public static final int tableRow0=0x7f060027;
         public static final int tableRow1=0x7f060001;
         public static final int tableRow2=0x7f060004;
         public static final int tableRow3=0x7f060007;
         public static final int tableRow4=0x7f06000a;
         public static final int tableRow5=0x7f06000d;
-        public static final int tableRow6=0x7f060016;
-        public static final int tableRow7=0x7f060020;
+        public static final int tableRow6=0x7f060017;
+        public static final int tableRow7=0x7f060021;
         public static final int textView1=0x7f060002;
         public static final int textView2=0x7f060005;
         public static final int textView3=0x7f060008;
         public static final int textView4=0x7f06000b;
         public static final int textView5=0x7f06000e;
-        public static final int textView6=0x7f060017;
-        public static final int textView7=0x7f060021;
-        public static final int transactionSizeEditText=0x7f06001b;
+        public static final int textView6=0x7f060018;
+        public static final int textView7=0x7f060022;
+        public static final int transactionSizeEditText=0x7f06001c;
     }
     public static final class layout {
         public static final int form_main=0x7f030000;
@@ -136,6 +137,11 @@ public final class R {
         /**  MAIN SCREEN 
          */
         public static final int main_search_hint=0x7f040008;
+        public static final int menuitem_clear=0x7f040027;
+        public static final int menuitem_revert=0x7f040026;
+        /**   MENU ITEMS 
+         */
+        public static final int menuitem_send=0x7f040025;
         public static final int notes_cancel_button=0x7f04000b;
         public static final int notes_save_button=0x7f04000c;
         /**  NOTES SCREEN 

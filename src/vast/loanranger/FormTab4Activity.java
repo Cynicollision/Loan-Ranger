@@ -14,6 +14,12 @@ public class FormTab4Activity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.form_tab4);
 
+        FormMainActivity.tab4 = this;
         FormMainActivity.populate(this);
+    }
+    
+    public void refresh()
+    {
+    	FormMainActivity.populate(this);
     }
 }

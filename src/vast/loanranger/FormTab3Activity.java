@@ -39,7 +39,12 @@ public class FormTab3Activity extends Activity
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         propertyComplexitySpinner.setAdapter(adapter);
         
+        FormMainActivity.tab3 = this;
         FormMainActivity.populate(this);
-
+    }
+    
+    public void refresh()
+    {
+    	FormMainActivity.populate(this);
     }
 }
